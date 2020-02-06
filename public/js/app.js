@@ -4,8 +4,8 @@ const messageOne = document.querySelector("#message-1");
 const messageTwo = document.querySelector("#message-2");
 
 
-weatherForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+weatherForm.addEventListener("submit", (event) => {
+    event.preventDefault();
     const location = search.value;
     const url = "http://localhost:3000/weather?address=" + location;
     
