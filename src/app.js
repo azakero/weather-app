@@ -40,19 +40,19 @@ app.get("/help", (req, res) => {
 
 app.get('/weather', (req, res) => {
     if(!req.query.address){
-        return res.send({
+        return res.json({
             error: "You have not provided an address"
         })
     }
     geocode(req.query.address, (error, {latitude, longitude, location} = {}) => {
         if(error) {
-            return res.send({ error });
+            return res.json({ error });
         }
         forecast(latitude, longitude, (error, forecastedData) => {
             if(error) {
-                return res.send({ error });
+                return res.json({ error });
             }
-            res.send({
+            res.json({
                 forecast: forecastedData,
                 location,
                 address: req.query.address
