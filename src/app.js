@@ -22,6 +22,7 @@ hbs.registerPartials(partialsPath);
 
 //Setup static directory to serve
 app.use(express.static(publicDirectory));
+app.use(express.json());
 
 
 // Routes
@@ -52,11 +53,6 @@ app.get('/weather', (req, res) => {
             if(error) {
                 return res.send({ error });
             }
-            console.log({
-                forecast: forecastedData,
-                location,
-                address: req.query.address
-            })
             res.send({
                 forecast: forecastedData,
                 location,
