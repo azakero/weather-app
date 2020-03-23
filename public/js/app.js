@@ -7,7 +7,7 @@ const messageTwo = document.querySelector("#message-2");
 weatherForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const location = search.value;
-    const url = "/weather;
+    const url = "/weather";
     
     messageOne.textContent = "Retrieving weather data...";
     messageTwo.textContent = "";
