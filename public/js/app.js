@@ -7,11 +7,12 @@ const messageTwo = document.querySelector("#message-2");
 weatherForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const location = search.value;
-    const url = "https://zaker-weather-app.herokuapp.com/weather?address=" + location;
+    const url = "/weather?address=" + location;
     
     messageOne.textContent = "Retrieving weather data...";
     messageTwo.textContent = "";
     fetch(url).then((response) => {
+        console.log(response)
         response.json().then((data) => {
             if(data.error) {
                 messageOne.textContent = data.error;
