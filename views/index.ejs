@@ -1,0 +1,46 @@
+<%- include ("./partials/header") %>
+
+        <p>Find the weather information of your area!</p>
+
+        <form>
+            <input placeholder="Location">
+            <button>Search</button>
+        </form>
+
+        <p id="message-1"></p>
+        <p id="message-2"></p>
+
+        <div class="dataContainer">
+
+            <% if ( data ) { %>
+
+                <p>
+                    <%= data.daily.data[0].summary %>
+                </p>
+    
+                <p>
+                    It is currently <%= data.currently.temperature %> degrees out. 
+                </p>
+    
+                <p>
+                    There is <%= data.currently.precipProbability %>% chance of rain!
+                </p>
+                <p>
+                    The current high of the day is <%= data.daily.data[0].temperatureHigh %> and the current low is <%= data.daily.data[0].temperatureLow %>.
+                </p>
+                
+            <% } else { %>
+                <p>
+                    <%= error %>
+                </p>
+            <% } %>
+
+        </div>
+
+        
+    </div>
+
+<%- include ("./partials/footer") %>
+
+
+    
