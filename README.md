@@ -3,6 +3,9 @@
 
 Data fetched from DarkSky API and Mapbox.  
 
+## Demo
+https://weatherapp.zaker.dev/
+
 ## Version
 1.0.0
 
